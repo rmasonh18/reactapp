@@ -1,11 +1,18 @@
+// add use state
+import { useState } from'react';
+
+
+
 // Counter Component
 
 function Counter() {
-    var count = 0;
+    //var count = 0;
+
+    const [count, setCount] = useState(0);
 
     // use setinterval() to increment counter
     setInterval(function() {
-        count++;
+        setCount(count+1)
         console.log("count =", count)
     }, 1000)
     return (
