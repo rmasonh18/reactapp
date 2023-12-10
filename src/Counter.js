@@ -15,8 +15,12 @@ function Counter() {
 
     useEffect(function() {
         var timer = setInterval(function() {
-            setCount(count+1); // first increment
-            setCount(count+1); // second increment
+            // fix timer with callback function as parameter
+            //setCount(count+1); // first increment
+            //setCount(count+1); // second increment
+
+            setCount((count) => count + 1); // first increment
+            setCount((count) => count + 1); // second increment
             console.log("count =", count);
     
     }, 1000);
