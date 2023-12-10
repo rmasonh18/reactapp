@@ -1,5 +1,5 @@
 // add use state
-import { useState } from'react';
+import { useState , useEffect} from'react'; // add useEffect 
 
 
 
@@ -11,10 +11,20 @@ function Counter() {
     const [count, setCount] = useState(0);
 
     // use setinterval() to increment counter
-    setInterval(function() {
-        setCount(count+1)
-        console.log("count =", count)
-    }, 1000)
+
+
+    useEffect(function() {
+        var timer = setInterval(function() {
+            setCount(count+1);
+            console.log("count =", count);
+    
+    }, 1000);
+    return function() {
+        clearInterval(timer);
+    }
+    }, );
+
+   
     return (
         <>
         The counter is set to: {count}
