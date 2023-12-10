@@ -7,7 +7,13 @@ import Counter from "./Counter.js";
 
 function App() {
   return (
-    <Counter />
+    <>
+    Counter defined by {"<Counter init = '10'/>"} : <br/>
+    <Counter init ='10' /> <br/>
+    Counter defined by {"<Counter init = '5'/>"} : <br/>
+    <Counter init = {5} /> <br/> <br/>
+    Counter defined by {"<Counter />"} : <br/> <Counter /> <br/> 
+            </>
   
   
   );

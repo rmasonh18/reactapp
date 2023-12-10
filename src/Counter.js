@@ -5,22 +5,20 @@ import { useState , useEffect} from'react'; // add useEffect
 
 // Counter Component
 
-function Counter() {
+function Counter(props) {
     //var count = 0;
+    var init = parseInt(props.init || 0);
 
-    const [count, setCount] = useState(0);
+    const [count, setCount] = useState(init);
 
     // use setinterval() to increment counter
 
 
     useEffect(function() {
         var timer = setInterval(function() {
-            // fix timer with callback function as parameter
-            //setCount(count+1); // first increment
-            //setCount(count+1); // second increment
-
+         
             setCount((count) => count + 1); // first increment
-            setCount((count) => count + 1); // second increment
+         
             console.log("count =", count);
     
     }, 1000);
@@ -32,6 +30,8 @@ function Counter() {
    
     return (
         <>
+        Intial value of the counter is: {init}
+        <br></br>
         The counter is set to: {count}
         </>
     )
